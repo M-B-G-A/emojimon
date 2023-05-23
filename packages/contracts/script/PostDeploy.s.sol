@@ -66,7 +66,7 @@ contract PostDeploy is Script {
     }
  
     MapConfig.set(world, width, height, terrain);
-    world.setMudscanWorldAddress(address(0x3979b1B4061D5be97e87faF601F941c0998DE6EC));
+    world.setMudscanWorldAddress(address(0x2723e39800f46d491172Fb0453521513b46e2D84));
     vm.stopBroadcast();
   }
 }
