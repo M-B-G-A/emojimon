@@ -7,7 +7,7 @@ import { addressToEntityKey } from "../addressToEntityKey.sol";
 // import { IWorld } from "@mudscan/src/codegen/world/IWorld.sol";
 
 abstract contract IMudScanWorld {
-    function MudScan_AchievementSyste_setAchievement (address playerAddress, uint32 score, uint32 stage) virtual public;
+    function EmojiMon_AchievementSyste_setAchievement (address playerAddress, uint32 score, uint32 stage) virtual public;
 }
 
 contract EncounterSystem is System {
@@ -35,7 +35,7 @@ contract EncounterSystem is System {
       Encounter.deleteRecord(player);
       
       uint32 mt = uint32(Monster.get(encounter.monster));
-      IMudScanWorld(mudscanWorldAddress).MudScan_AchievementSyste_setAchievement(_msgSender(), 100 * mt, mt);
+      IMudScanWorld(mudscanWorldAddress).EmojiMon_AchievementSyste_setAchievement(_msgSender(), 100 * mt, mt);
     } else if (encounter.catchAttempts >= 2) {
       // Missed 2 times, monster escapes
       MonsterCatchAttempt.emitEphemeral(player, MonsterCatchResult.Fled);

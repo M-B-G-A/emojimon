@@ -25,7 +25,7 @@ export async function setupNetwork() {
     storeConfig,
   });
 
-  result.startSync();
+  result.startSync([], networkConfig.initialBlockNumber);
 
   // Request drip from faucet
   const signer = result.network.signer.get();
